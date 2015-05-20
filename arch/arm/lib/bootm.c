@@ -218,12 +218,12 @@ static void boot_prep_linux(bootm_headers_t *images)
 		setup_start_tag(gd->bd);
 		if (BOOTM_ENABLE_SERIAL_TAG)
 			setup_serial_tag(&params);
+		if (BOOTM_ENABLE_MEMORY_TAGS)
+			setup_memory_tags(gd->bd);
 		if (BOOTM_ENABLE_CMDLINE_TAG)
 			setup_commandline_tag(gd->bd, commandline);
 		if (BOOTM_ENABLE_REVISION_TAG)
 			setup_revision_tag(&params);
-		if (BOOTM_ENABLE_MEMORY_TAGS)
-			setup_memory_tags(gd->bd);
 		if (BOOTM_ENABLE_INITRD_TAG) {
 			if (images->rd_start && images->rd_end) {
 				setup_initrd_tag(gd->bd, images->rd_start,
