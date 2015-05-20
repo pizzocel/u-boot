@@ -131,6 +131,7 @@
 #define CONFIG_CMD_MMC
 #define CONFIG_PARTITION_UUIDS
 #define CONFIG_CMD_PART
+#define CONFIG_CMD_SETEXPR
 
 /* Device tree support */
 #define CONFIG_OF_BOARD_SETUP
