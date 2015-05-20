@@ -785,7 +785,8 @@ uint32_t gen_hcsplt(struct usb_device *dev)
 
 #if 1
 	/* printf("hcsplt: MATCH\n");*/
-
+	udelay(500);
+	
 	return DWC2_HCSPLT_SPLTENA |
 		(2 << DWC2_HCSPLT_HUBADDR_OFFSET) |
 		(4 << DWC2_HCSPLT_PRTADDR_OFFSET);
