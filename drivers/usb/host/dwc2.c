@@ -1,5 +1,3 @@
-#define DEBUG
-
 /*
  * Copyright (C) 2012 Oleksandr Tymoshenko <gonzo@freebsd.org>
  * Copyright (C) 2014 Marek Vasut <marex@denx.de>
@@ -786,7 +784,7 @@ uint32_t gen_hcsplt(struct usb_device *dev)
 		return 0;
 
 #if 1
-	printf("hcsplt: MATCH\n");
+	/* printf("hcsplt: MATCH\n");*/
 
 	return DWC2_HCSPLT_SPLTENA |
 		(2 << DWC2_HCSPLT_HUBADDR_OFFSET) |
