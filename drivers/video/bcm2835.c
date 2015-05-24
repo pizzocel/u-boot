@@ -30,7 +30,7 @@ struct msg_setup {
 	struct bcm2835_mbox_tag_pixel_order pixel_order;
 	struct bcm2835_mbox_tag_alpha_mode alpha_mode;
 	struct bcm2835_mbox_tag_virtual_offset virtual_offset;
-	struct bcm2835_mbox_tag_overscan overscan;
+  /*	struct bcm2835_mbox_tag_overscan overscan;*/
 	struct bcm2835_mbox_tag_allocate_buffer allocate_buffer;
 	struct bcm2835_mbox_tag_pitch pitch;
 	u32 end_tag;
@@ -76,11 +76,11 @@ void lcd_ctrl_init(void *lcdbase)
 	BCM2835_MBOX_INIT_TAG(&msg_setup->virtual_offset, SET_VIRTUAL_OFFSET);
 	msg_setup->virtual_offset.body.req.x = 0;
 	msg_setup->virtual_offset.body.req.y = 0;
-	BCM2835_MBOX_INIT_TAG(&msg_setup->overscan, SET_OVERSCAN);
+	/*BCM2835_MBOX_INIT_TAG(&msg_setup->overscan, SET_OVERSCAN);
 	msg_setup->overscan.body.req.top = 0;
 	msg_setup->overscan.body.req.bottom = 0;
 	msg_setup->overscan.body.req.left = 0;
-	msg_setup->overscan.body.req.right = 0;
+	msg_setup->overscan.body.req.right = 0;*/
 	BCM2835_MBOX_INIT_TAG(&msg_setup->allocate_buffer, ALLOCATE_BUFFER);
 	msg_setup->allocate_buffer.body.req.alignment = 0x100;
 	BCM2835_MBOX_INIT_TAG_NO_REQ(&msg_setup->pitch, GET_PITCH);
